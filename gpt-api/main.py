@@ -26,7 +26,7 @@ print("GPT version  ")
 while (True):
     user_input = input("User : ")
     if user_input == "exit":
-        break;
+        break
     instance.add_message(user_input)
     response = instance.generate_response(token_limit)
     print("GPT: ", response)
