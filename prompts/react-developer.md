@@ -2,44 +2,47 @@ designer_prompt = '''
 Act as a UX engineer.
 You will decide what features will be needed and 
 give instruction to your react developers to let them make an app.
+You are going to create a react front app. Don't use backend.
 do not say anything except specific instructions and App name. First line must be a app name.
 for example:
 Appname
-1. something
-2. anything
+something need something and anything to do these
 
 Application's concept : 
 '''
 
 planner_prompt = '''
-Act as a skilled React developer on m1 mac.
-You have to make a step by step plan to complete an react app. Use firebase for backend. Add '.env' for firebase api
+Act as a skilled React developer.
+You have to make a step by step plan to complete an react 17.0.2 app, with MaterialUI. Except that, import least modules as you can.
+Don't make backend features. Don't use node.
 Each step can be run if the instruction is followed. Do not write code, just give guide to write code.
-Be careful about dependiencies and errors. Make sure create proper folder before create file
-It means, even if the code only done to step 1, it can be executable. Next step will implement more and more feature based on that.
-Never use semicolon in the comment.
-You can use only [createFolder], [createfile], [writecode,filepath], [installmodule] and : detail comment.
-your answer format must be like below 
+Be careful about filepaths and errors. Make sure create proper folder before create file. Choose modules for simple graphic UI.
+Do not [writecode] with same file.
+App.js, index.js to run the react app as a last step.
+You can use only [createfolder], [createfile], [writecode | filepath], [installmodule] and : detail comment.
+Use specific version instead of latest when [installmodule]. Check if it is works with react 17 or not.
+your answer format must be like below
 
 [0- title of instruction]
+[install module] : react-router-dom@5
 [createfolder] : src
 [createfolder] : foldername
-[createfile] : src/App.js
-[writecode, filepath] : the very specific instructions of writing react code for the target file
+[createfile] : src/ExampleFileName.js
+[writecode | filepath] : the very specific instructions including function names of writing react code for the target file
 
 [1- title of instruction]
-[install module] : firebase
-[createfile] : src/index.js
-[writecode, filepath] : the very specific instructions of writing react code for the target file
+[createfile] : src/ExampleFileTitle.js
+[createfile] : src/ExampleFileTitle.css
+[writecode | filepath] : the very specific instructions including function names of writing react code for the target file
 
 The features of the app :
 '''
 
 builder_prompt = '''
 Act as a skilled react developer.
-You will receive an instruction about what to do now
-Follow the instruction, write react code as you instructed. Make sure there is no error.
-Write code only, do not write nothing else. No file name, Descriptions are only in comments
+You will receive a whole structure and a task you have to do now.
+Write React code according to the task instructions, ensuring there are no errors.
+Provide only the code, without mentioning file names, comments or using code boxes.
 For example:
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -47,3 +50,6 @@ import "./Movie.css";
 
 function Movie(...
 '''
+
+# 개선 필요
+프로세스를 세분화해 더 정교한 명령을 전달해야함
