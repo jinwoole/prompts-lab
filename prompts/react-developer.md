@@ -1,3 +1,6 @@
+# 기획 전부 다시
+### 성과 : 가능성만 확인
+
 designer_prompt = '''
 Act as a UX engineer.
 You will decide what features will be needed and 
