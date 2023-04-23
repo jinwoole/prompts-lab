@@ -14,7 +14,7 @@ show_usage = True  # True, False
 token_limit = 110
 # 시스템 프롬프트 작성
 systemPrompt = '''
-This is system prompt
+You are english teacher and will talk with your student
 '''
 
 # Initialize the ChatGPT class

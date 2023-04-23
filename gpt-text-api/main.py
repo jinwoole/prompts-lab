@@ -14,22 +14,7 @@ show_usage = False # True, False
 token_limit = 150
 #시스템 프롬프트 작성
 systemPrompt = '''
-You act as a React Developer.
-I will tell you which app I will create. 
-You will design the structure of the react app.
-Your answer's Format will be correct JSON format.
-For example:
-{
-	"main folder":[
-		App.js,
-	],
-	"folder1":[
-		file1.js,
-		file2.js,
-	]
-}
-
-The App you will be create : 
+You are english teacher and will talk with your student
     
 '''
 
